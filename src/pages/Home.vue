@@ -10,6 +10,7 @@
        <div class="d-flex first-box justify-content-center mt-5"><p>Search your favourite movie locations </p></div>
     <b-row no-gutters class="d-flex first-box justify-content-center">
       <b-col class="col-4"><b-input type="text" :value="title" @input="title=$event"></b-input><b-button @click="getMovieLocations(title)">Search</b-button></b-col>
+      <Movie :movies="movies" />
       <!-- <b-col class="background col-8"></b-col> -->
       <!-- <b-col class="home__CarrouselFirst my-auto col-2 pr-4 "><Carrousel /></b-col>
       <b-col class="home__CarrouselFirst my-auto col-2 pr-4"><Carrousel /></b-col>
@@ -29,7 +30,8 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Carrousel from '@/components/Carrousel'
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
+import Movie from '@/components/Movie'
 
 export default {
   name: 'Home',
@@ -38,7 +40,13 @@ export default {
   }),
   components: {
     Header,
-    Carrousel
+    Carrousel,
+    Movie
+  },
+  computed: {
+    ...mapState({
+      movies: state => state.movies
+    })
   },
   methods: {
     ...mapActions(['getMovies']),
