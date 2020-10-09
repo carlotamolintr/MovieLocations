@@ -30,4 +30,20 @@ export default {
 
 <style>
 
+div.carousel-inner {
+    position: absolute;
+    max-height: 400px !important;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  position: relative;
+  height: 400px;
+}
+
+.carousel-item > img {
+  position: absolute;
+  top: -200px;
+  opacity: 0.8;
+}
+
 </style>
