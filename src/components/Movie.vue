@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     getLocations (x) {
-      $('#myModal').modal('show')
+      // $('#myModal').modal('show')
       // abrir un modal
       // Passando el indice
     }
