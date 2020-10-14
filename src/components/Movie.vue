@@ -8,7 +8,7 @@
         <p class="pl-3 plot">Summary: {{m.plot}}</p>
       </div>
       <p>{{m.filmingLocations}}</p>
-      <button @click="getLocations()">see locations</button>
+      <button @click="getLocations(i)"> see locations</button>
   </div>
   <!-- <Map /> -->
   </div>
@@ -17,15 +17,26 @@
 
 <script>
 // import Map from '@/components/Map'
-
+// import Modal from '@/components/Modal'
 export default {
+  data: () => ({
+    show: false
+  }),
   components: {
+    // Modal
     // Map
   },
   props: {
     movies: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    getLocations (x) {
+      $('#myModal').modal('show')
+      // abrir un modal
+      // Passando el indice
     }
   }
 }
