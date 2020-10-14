@@ -9,6 +9,7 @@
       </div>
       <p>{{m.filmingLocations}}</p>
       <button @click="getLocations(i)"> see locations</button>
+      <Modal />
   </div>
   <!-- <Map /> -->
   </div>
@@ -17,13 +18,13 @@
 
 <script>
 // import Map from '@/components/Map'
-// import Modal from '@/components/Modal'
+import Modal from '@/components/Modal'
 export default {
   data: () => ({
     show: false
   }),
   components: {
-    // Modal
+    Modal
     // Map
   },
   props: {
@@ -34,6 +35,7 @@ export default {
   },
   methods: {
     getLocations (x) {
+      this.$bvModal.show('bv-modal-example')
       // $('#myModal').modal('show')
       // abrir un modal
       // Passando el indice
