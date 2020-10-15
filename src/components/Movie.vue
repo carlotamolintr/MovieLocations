@@ -8,9 +8,9 @@
         <p class="pl-3 plot">Summary: {{m.plot}}</p>
       </div>
       <p>{{m.filmingLocations}}</p>
-      <button @click="getLocations(i)"> see locations</button>
-      <Modal />
+      <button @click="showModal(i)"> see locations</button>
   </div>
+  <Modal :filming-locations="data" />
   <!-- <Map /> -->
   </div>
 
@@ -21,7 +21,8 @@
 import Modal from '@/components/Modal'
 export default {
   data: () => ({
-    show: false
+    show: false,
+    data: null
   }),
   components: {
     Modal
@@ -34,8 +35,10 @@ export default {
     }
   },
   methods: {
-    getLocations (x) {
-      this.$bvModal.show('bv-modal-example')
+    showModal (x) {
+      console.log(x)
+      this.data = this.movies[x].filmingLocations
+      this.$bvModal.show('modal-location')
       // $('#myModal').modal('show')
       // abrir un modal
       // Passando el indice
@@ -44,7 +47,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .image {
   height: fit-content;
 }
@@ -53,4 +56,5 @@ export default {
   text-align: justify;
   display: flex;
 }
+
 </style>

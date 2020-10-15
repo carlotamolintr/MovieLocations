@@ -35,7 +35,7 @@ export default {
 <style scoped>
 
 #mapid {
-   height: 180px
+   height: 380px
 }
 
 /* .leaflet-popup-content {

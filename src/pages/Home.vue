@@ -14,7 +14,7 @@
      <Movie :movies="movies" />
      </b-container>
     <div style="height:400px"></div>
-     <Map />
+     <!-- <Map /> -->
    </div>
 </template>
 
@@ -24,7 +24,7 @@ import Header from '@/components/Header.vue'
 import Carrousel from '@/components/Carrousel'
 import { mapState, mapActions } from 'vuex'
 import Movie from '@/components/Movie'
-import Map from '@/components/Map'
+// import Map from '@/components/Map'
 
 export default {
   name: 'Home',
@@ -34,8 +34,8 @@ export default {
   components: {
     Header,
     Carrousel,
-    Movie,
-    Map
+    Movie
+    // Map
   },
   computed: {
     ...mapState({
