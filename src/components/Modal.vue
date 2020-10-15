@@ -4,7 +4,7 @@
       <div v-for="(location, i) in filmingLocations" :key="i">
         <p>{{location}}</p>
       </div>
-      <Map class="map" />
+      <Map class="map" :options="filmingLocations" />
       <h3>Hello From This Modal!</h3>
     </div>
     <!-- <b-button class="mt-3" block @click="$bvModal.hide('modal-location')">Close Me</b-button> -->

@@ -1,17 +1,27 @@
 <template>
-  <div id="mapid" ></div>
+  <div id="mapid" >
+    <div v-for="(option, i) in options" :key="i">
+    <l-map :options="option.location"></l-map>
+    </div>
+  </div>
 </template>
 
 <script>
 import L from 'leaflet'
-// import { LTileLayer } from 'vue2-leaflet'
+import { LMap } from 'vue2-leaflet'
 import 'leaflet/dist/leaflet.css'
 
 export default {
   components: {
-    // LMap,
+    LMap
     // LTileLayer
     // LMarker,
+  },
+  props: {
+    options: {
+      type: Array,
+      default: () => []
+    }
   },
   methods: {
     getMap () {
