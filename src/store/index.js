@@ -41,6 +41,13 @@ export default new Vuex.Store({
       commit('movies', response.data.data.movies)
     },
 
+    async getCoordenates ({ commit }, address) {
+      console.log(address, 'address')
+
+      const response = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?types=address&access_token=pk.eyJ1IjoiY2FybG90YW05MSIsImEiOiJja2Z3cml0cjMxc3V6MnptemI3azNldzFvIn0.nX8XJSDcnLjKq-HSihzhwA`)
+      commit('coordenates', response.data)
+    },
+
     cleanUp ({ commit }) {
       commit('movies', [])
     }
